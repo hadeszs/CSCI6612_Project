@@ -2,34 +2,77 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<title>CSCI6612_Project Pandas Team</title>
-	<!-- <link rel="stylesheet" type="text/css" href="index.css"> -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-	<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
-	<script src="http://d3js.org/topojson.v2.min.js"></script>
+  <meta charset="utf-8">
+  <title>CSCI6612_Project Pandas Team</title>
+  <link rel="stylesheet" type="text/css" href="/styles/homepage.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="http://d3js.org/topojson.v2.min.js"></script>
 </head>
 
 <body>
 
-  <img src="/images/cookingPanter.PNG" style="display: block;margin: 0 auto;"/>
-	<div id="selectBar"></div>
+  <img src="/images/cookingPanter.PNG" style="display: block;margin: 0 auto;" /><br><br>
+  <div class="form-group row justify-content-center">
+    <div class="col-lg-3">
+      <ul class="list-group">
+        <li>
+          <button type="button" class="btn btn-primary" onclick="swithImgs(1,this)">Popular Ingredients</button>
+        </li>
+        <br>
+        <li>
+          <button type="button" class="btn btn-primary" onclick="swithImgs(2,this)">Cuisine Clustering</button>
+        </li>
+        <br>
+        <li>
+          <button type="button" class="btn btn-primary" onclick="swithImgs(3,this)">Cuisine Similarity</button>
+        </li>
+        <br>
+      </ul>
+    </div>
+    <div class="col-lg-3">
+      <img src="" id="imgs" width='0' height='0'>
+    </div>
+
+
+  </div>
+
+  <script>
+    function swithImgs(key,button) {
+      button.class="btn btn-success";
+      var img = document.getElementById("imgs");
+      img.width = '500';
+      img.height = '300';
+      if (key == 1) {
+        img.src = "/images/minimum.PNG";
+      } else if (key == 2) {
+        img.src = "/images/expected.PNG";
+      } else {
+        img.src = "/images/bonus.PNG";
+      }
+
+    }
+
+  </script>
+
+
+  <!-- <div id="selectBar"></div>
 	<div style="text-align:center;float:left">
 		<div id="map" style="width:80%; height:80%"></div>
 	</div>
 	<div style="text-align:center;float:left">
 		<div id="barChart" style="width:80%; height:80%"></div>
 		<div id="cirChart" style="width:80%; height:80%"></div>
-	</div>
+	</div> -->
 
-	<!-- <div id="map"></div> -->
-	<!-- <div id='chart1'></div> -->
-	<!-- <div id="chart1"></div> -->
+  <!-- <div id="map"></div> -->
+  <!-- <div id='chart1'></div> -->
+  <!-- <div id="chart1"></div> -->
 
 
 
-	<!-- <script type="text/javascript" src="canada_map.js"></script> -->
-	<!-- <script type="text/javascript" src="index.js"></script> -->
+  <!-- <script type="text/javascript" src="canada_map.js"></script> -->
+  <!-- <script type="text/javascript" src="index.js"></script> -->
 </body>
 
 </html>
